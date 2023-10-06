@@ -23,21 +23,38 @@ public class VirtualPet {
         }
         face.setMessage("Yum, thanks");
         face.setImage("normal");
+        hungerStarve();
     }
     
     public void exercise() {
-        hunger = hunger + 3;
+        hunger = hunger + 5;
+        tiredness = tiredness + 2;
         face.setMessage("1, 2, 3, jump.  Whew.");
         face.setImage("tired");
         if(tiredness < 4){
-            face.setMessage("that was great!")
+            face.setMessage("That was great!");
             face.setImage("ecstatic");
         }
+        hungerStarve();
     }
     
     public void sleep() {
         hunger = hunger + 1;
+        tiredness = 0;
         face.setImage("asleep");
+        hungerStarve();
+    }
+    public void hungerStarve(){
+        if (hunger > 20){
+            if (hunger > 30){
+                face.setMessage("I'm really hungry");
+                face.setImage("starving");
+            }
+            else{
+                face.setMessage("I'm hungry");
+                face.setImage("hungry");
+            }
     }
 
+}
 } // end Virtual Pet
