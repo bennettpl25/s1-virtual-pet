@@ -57,4 +57,12 @@ public class VirtualPet {
     }
 
 }
+    public void noExercise(){
+        face.setMessage("You're no fun");
+        face.setImage("cry");
+    }
+    public void explodeMeter(int w){
+        explodeMeter = explodeMeter + w;
+        
+    }
 } // end Virtual Pet
