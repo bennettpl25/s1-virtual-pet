@@ -15,54 +15,28 @@ public class VirtualPet {
         face.setMessage("Hello.");
     }
     
-    public void feed() {
-        if (hunger > 10) {
-            hunger = hunger - 10;
-        } else {
-            hunger = 0;
+    public void astonishment(){
+        face.setImage("astonished");
+    }
+    public void sad(){
+        face.setMessage("I hate you, you're no fun");
+        face.setImage("verysad");
+    }
+    public void houseFront(){
+        face.setMessage("Wowee! Scary! Gee willakers! I can't wait to explore!");
+        face.setImage("hauntedhouse");
+    }
+    public void death(){
+        face.setMessage("You are Dead");
+        face.setImage("skeleton");
+    }
+    public void basementEnding(){
+        face.setMessage("Wow! So SCARY!!!!!! AAAA!!!!");
+        face.setImage("basement");
         }
-        face.setMessage("Yum, thanks");
-        face.setImage("normal");
-        hungerStarve();
-    }
-    
-    public void exercise() {
-        hunger = hunger + 5;
-        tiredness = tiredness + 2;
-        face.setMessage("1, 2, 3, jump.  Whew.");
-        face.setImage("tired");
-        if(tiredness < 4){
-            face.setMessage("That was great!");
-            face.setImage("ecstatic");
+        public void livingroom(){
+            face.setMessage("Yonkers! What a very creepy scary living room! Oh look, a very suspucious closet!");
+            face.setImage("shocked");
         }
-        hungerStarve();
-    }
-    
-    public void sleep() {
-        hunger = hunger + 1;
-        tiredness = 0;
-        face.setImage("asleep");
-        hungerStarve();
-    }
-    public void hungerStarve(){
-        if (hunger > 20){
-            if (hunger > 30){
-                face.setMessage("I'm really hungry");
-                face.setImage("starving");
-            }
-            else{
-                face.setMessage("I'm hungry");
-                face.setImage("hungry");
-            }
-    }
-
 }
-    public void noExercise(){
-        face.setMessage("You're no fun");
-        face.setImage("cry");
-    }
-    public void explodeMeter(int w){
-        explodeMeter = explodeMeter + w;
-        
-    }
-} // end Virtual Pet
+ // end Virtual Pet
