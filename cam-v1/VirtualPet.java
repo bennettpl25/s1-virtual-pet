@@ -6,7 +6,7 @@
 public class VirtualPet {
     
     VirtualPetFace face;
-    private int money;
+    private boolean money;
     public VirtualPet() {
         face = new VirtualPetFace();
         face.setImage("normal");
@@ -25,7 +25,7 @@ public class VirtualPet {
         face.setImage("hauntedhouse");
     }
     public void death(){
-        face.setMessage("You are Dead");
+        face.setMessage("You Died");
         face.setImage("skeleton");
     }
     public void basementEnding(){
@@ -71,11 +71,35 @@ public class VirtualPet {
             face.setMessage("I feel something... OH! It's a ton of CASH!");
         }
         public void moneyUp(){
-            money = 9999;
+            money = true;
         }
         public void leave(){
             face.setMessage("Well, I guess there's nothing else to see. Time to leave.");
-            face.setImage("ecstatic");
+            face.setImage("normal");
+        }
+        public void irs(){
+            face.setMessage("Oh NO! A monster!!!!!!!");
+            face.setImage("astonished");
+        }
+        public void irsconfront(){
+            face.setMessage("You're behind on your taxes, bucko...");
+            face.setImage("deviousirs");
+        }
+        public void irsdie(){
+            if (money == false){
+                face.setMessage("You Died");
+                face.setImage("skeleton");
+            }
+            if (money == true){
+                face.setMessage("Oh man... I just lost all the money I just found...");
+                face.setImage("verysad");
+            }
+        }
+        public void winloss(){
+            if (money == true){
+                face.setMessage("You Survived!");
+                face.setImage("trophy");
+            }
         }
 
 }
