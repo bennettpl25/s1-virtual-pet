@@ -63,7 +63,7 @@ public class VirtualPet {
             face.setImage("bedroom");
         }
         public void tired(){
-            face.setImage("tired");
+            face.setImage("sick");
             face.setMessage("YAWN");
         }
         public void money(){
